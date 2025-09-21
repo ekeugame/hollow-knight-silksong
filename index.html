@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EKEU GAMES | Platform Selection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #22c55e;
+      --primary-hover: #16a34a;
+      --secondary: #3b82f6;
+      --accent: #f59e0b;
+      --dark: #121212;
+      --darker: #0a0a0a;
+      --dark-card: #1e1e1e;
+      --text: #ffffff;
+      --text-secondary: #aaaaaa;
+      --neon: #00f3ff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    body {
+      background-color: var(--darker);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 20%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, rgba(18, 18, 18, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-container img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+    }
+    
+    .logo-text h1 {
+      font-size: 26px;
+      background: linear-gradient(to right, #22c55e, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-text p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: -3px;
+      letter-spacing: 1.5px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+    
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .header-buttons {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .btn {
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: none;
+    }
+    
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      z-index: -1;
+      transition: transform 0.5s ease;
+    }
+    
+    .btn-primary {
+      color: white;
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+    }
+    
+    .btn-primary:before {
+      transform: scaleX(1);
+    }
+    
+    .btn-primary:hover:before {
+      transform: scaleX(1.1);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--text);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Platform Hero */
+    .platform-hero {
+      padding: 140px 0 100px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                  url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      text-align: center;
+    }
+    
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .particle {
+      position: absolute;
+      background: var(--neon);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100px) translateX(100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.8rem;
+      margin-bottom: 20px;
+      color: white;
+      line-height: 1.2;
+      text-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+      animation: glow 2s infinite alternate;
+    }
+    
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+      }
+      to {
+        text-shadow: 0 0 20px rgba(34, 197, 94, 0.9), 0 0 30px rgba(34, 197, 94, 0.7);
+      }
+    }
+    
+    .hero-content p {
+      font-size: 1.4rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.2);
+      color: var(--primary);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      border: 1px solid var(--primary);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
+    }
+    
+    /* Platform Selector Section */
+    .platform-section {
+      padding: 70px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .section-subtitle {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    
+    .platform-container {
+      background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(37, 37, 37, 0.8));
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 900px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+    }
+    
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .platform-card {
+      background: rgba(30, 30, 30, 0.6);
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .platform-card:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      z-index: -1;
+      border-radius: 18px;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    
+    .platform-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      border-color: transparent;
+    }
+    
+    .platform-card:hover:before {
+      opacity: 1;
+    }
+    
+    .platform-card.selected {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: var(--primary);
+    }
+    
+    .platform-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+      transition: all 0.3s;
+    }
+    
+    .platform-card:hover .platform-icon {
+      color: var(--text);
+      transform: scale(1.2);
+    }
+    
+    .platform-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+      color: white;
+    }
+    
+    .platform-card:hover .platform-name {
+      color: var(--text);
+    }
+    
+    .platform-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      transition: color 0.3s;
+      margin-bottom: 10px;
+    }
+    
+    .platform-card:hover .platform-desc {
+      color: var(--text);
+    }
+    
+    .game-size {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 10px auto;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .platform-card:hover .game-size {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border-color: transparent;
+    }
+    
+    .games-container {
+      margin-top: 40px;
+      background: rgba(30, 30, 30, 0.4);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .games-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .games-title {
+      font-size: 1.7rem;
+      color: var(--primary);
+    }
+    
+    .games-count {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary);
+    }
+    
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    
+    .game-card {
+      background: rgba(30, 30, 30, 0.6);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .game-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border-color: var(--primary);
+    }
+    
+    .game-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: black;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 12px;
+      z-index: 2;
+    }
+    
+    .game-image {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .game-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      aspect-ratio: 16/9;
+    }
+    
+    .game-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .game-platforms {
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .platform-tag {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--secondary);
+      padding: 3px 10px;
+      border-radius: 30px;
+      border: 1px solid var(--secondary);
+    }
+    
+    .download-link {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      font-size: 14px;
+      display: block;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .download-link:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--primary-hover), #2563eb);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .download-link:hover:before {
+      opacity: 1;
+    }
+    
+    .download-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+    }
+    
+    /* Newsletter */
+    .newsletter {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a2e3b 0%, #121212 100%);
+      text-align: center;
+      border-radius: 20px;
+      margin: 60px auto;
+      max-width: 1200px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .newsletter:before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+      z-index: 1;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .newsletter-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .newsletter h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .newsletter p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 15px;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .newsletter-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+      border-color: var(--primary);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--darker);
+      padding: 70px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: auto;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    
+    .footer-column h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 15px;
+    }
+    
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+    
+    .footer-links-bottom {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links-bottom a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links-bottom a:hover {
+      color: var(--primary);
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--darker);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: transform 0.4s ease-in-out;
+    }
+    
+    .mobile-menu.active {
+      transform: translateY(0);
+    }
+    
+    .mobile-menu-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .mobile-nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    
+    .mobile-nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .mobile-header-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 40px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      
+      .nav-links,
+      .header-buttons {
+        display: none;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.1rem;
+      }
+      
+      .platform-container {
+        padding: 25px;
+      }
+      
+      .platform-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .platform-hero {
+        padding: 100px 0 60px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .platform-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    /* Download Popup */
+    .download-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .download-popup.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .popup-content {
+      background: var(--dark-card);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
+      border: 1px solid var(--primary);
+      transform: translateY(-50px);
+      transition: transform 0.5s ease;
+    }
+    
+    .download-popup.active .popup-content {
+      transform: translateY(0);
+    }
+    
+    .popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .popup-close:hover {
+      color: var(--primary);
+    }
+    
+    .popup-icon {
+      font-size: 4rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
+    }
+    
+    .popup-title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .popup-message {
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .popup-download-btn {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    
+    .popup-download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(34, 197, 94, 0.4);
+    }
+    
+    .popup-loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255,255,255,0.1);
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      margin: 20px auto;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .countdown-item {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 10px;
+      min-width: 60px;
+    }
+    
+    .countdown-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .countdown-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="https://www.ekeugames.online/" class="logo-container">
+          <img src="https://i.postimg.cc/sxPfmzXr/Picsart-25-07-01-21-17-48-570.png" alt="EKEU GAMES Logo" loading="lazy">
+          <div class="logo-text">
+            <h1>EKEU GAMES</h1>
+            <p>Download Premium Games for Free</p>
+          </div>
+        </a>
+        
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="#">Games</a>
+          <a href="#">Most Downloaded</a>
+          <a href="#">New Games</a>
+          <a href="#">Support</a>
+        </nav>
+        
+        <div class="header-buttons">
+          <a href="#" class="btn btn-primary"><i class="fas fa-user"></i> Login</a>
+          <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Get Started</a>
+        </div>
+        
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <button class="mobile-menu-close">
+      <i class="fas fa-times"></i>
+    </button>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="#">Games</a>
+      <a href="#">Most Downloaded</a>
+      <a href="#">New Games</a>
+      <a href="#">Support</a>
+    </nav>
+    <div class="mobile-header-buttons">
+      <a href="#" class="btn btn-outline"><i class="fas fa-user"></i> Login</a>
+      <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Get Started</a>
+    </div>
+  </div>
+
+  <!-- Platform Hero -->
+  <section class="platform-hero">
+    <div class="particles" id="particles"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Over 1 Million Games Downloaded</div>
+        <h1>Download Your Game Now</h1>
+        <p>Choose your platform and get premium games for free</p>
+        <div class="hero-stats">
+          <a href="#platforms" class="btn btn-primary"><i class="fas fa-gamepad"></i> Choose Platform</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Selector Section -->
+  <section class="platform-section" id="platforms">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Choose Your Platform</h2>
+        <p class="section-subtitle fade-in delay-1">Choose the platform you want to download games for</p>
+      </div>
+      
+      <div class="platform-container fade-in delay-2">
+        <div class="platform-grid">
+          <div class="platform-card" data-platform="pc" data-link="https://buzzheavier.com/1i76c6eaq6md">
+            <div class="platform-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <h3 class="platform-name">PC</h3>
+            <p class="platform-desc">Windows and Mac Games</p>
+            <div class="game-size">
+              <i class="fas fa-hdd"></i>
+              <span>14 GB</span>
+            </div>
+          </div>
+          
+          <div class="platform-card" data-platform="android" data-link="https://buzzheavier.com/1i76c6eaq6md">
+            <div class="platform-icon">
+              <i class="fab fa-android"></i>
+            </div>
+            <h3 class="platform-name">Android</h3>
+            <p class="platform-desc">Android Games and Apps</p>
+            <div class="game-size">
+              <i class="fas fa-hdd"></i>
+              <span>14GB</span>
+            </div>
+          </div>
+          
+          <div class="platform-card" data-platform="ios" data-link="https://buzzheavier.com/1i76c6eaq6md">
+            <div class="platform-icon">
+              <i class="fab fa-apple"></i>
+            </div>
+            <h3 class="platform-name">iOS</h3>
+            <p class="platform-desc">iPhone and iPad Games</p>
+            <div class="game-size">
+              <i class="fas fa-hdd"></i>
+              <span>12</span>
+            </div>
+         </div>
+          
+          <div class="platform-card" data-platform="xbox" data-link="https://buzzheavier.com/1i76c6eaq6md">
+            <div class="platform-icon">
+              <i class="fab fa-xbox"></i>
+            </div>
+            <h3 class="platform-name">Xbox</h3>
+            <p class="platform-desc">Xbox Series X/S Games</p>
+            <div class="game-size">
+              <i class="fas fa-hdd"></i>
+              <span>14GB</span>
+               </div>
+            </div>
+          
+          <div class="platform-card" data-platform="playstation" data-link="https://buzzheavier.com/1i76c6eaq6md">
+            <div class="platform-icon">
+              <i class="fab fa-playstation"></i>
+              </div>
+            <h3 class="platform-name">PlayStation</h3>
+            <p class="platform-desc">PS4 & PS5 Games</p>
+            <div class="game-size">
+              <i class="fas fa-hdd"></i>
+              <span>14GB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Games -->
+  <section class="platform-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title fade-in">Featured Games</h2>
+        <p class="section-subtitle fade-in delay-1">Top featured games available for download</p>
+      </div>
+      
+      <div class="games-container">
+        <div class="games-header">
+          <h3 class="games-title">More Games</h3>
+          <span class="games-count">+5K Games Available</span>
+        </div>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-badge">New</div>
+            <div class="game-image">
+              <img src="https://preview.redd.it/gta-6-cover-art-inspiration-v0-n72q0bo84f5c1.jpg?width=640&crop=smart&auto=webp&s=3182c0c19ee5bd57862a59ba432810e30e8b5831" alt="GTA V" loading="lazy">
+            </div>
+            <h4 class="game-name">GTA VI Premium Edition</h4>
+            <div class="game-platforms">
+              <span class="platform-tag">Available on all platforms</span>
+            </div>
+            <button class="download-link" data-link="https://ekeugames.github.io/Download-GTA-6/">Download Now</button>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-badge">Popular</div>
+            <div class="game-image">
+              <img src="https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" alt="Elden Ring" loading="lazy">
+            </div>
+            <h4 class="game-name">Elden Ring</h4>
+            <div class="game-platforms">
+              <span class="platform-tag">Available on all platforms</span>
+            </div>
+            <button class="download-link" data-link="https://ekeugames.github.io/Download-ELDEN-RING/">Download Now</button>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-image">
+              <img src="https://press.cdprojektred.com/_next/image?url=https%3A%2F%2Fcdn-l-press.cdprojektred.com%2Fnews%2F6fdf182c20052b6a28cac8d0e61f28f0111755897f9833d1.png&w=3840&q=75" alt="Cyberpunk 2077" loading="lazy">
+            </div>
+            <h4 class="game-name">Cyberpunk 2077</h4>
+            <div class="game-platforms">
+              <span class="platform-tag">Available on all platforms</span>
+            </div>
+            <button class="download-link" data-link="https://ekeugames.github.io/Download-Cyberpunk-2077/">Download Now</button>
+          </div>
+          
+          <div class="game-card">
+            <div class="game-badge">Popular</div>
+            <div class="game-image">
+              <img src="https://i.ytimg.com/vi/Pc8oIkqmJy0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAU9zwYTg44RhAoGxoaCH9i3_ousg" alt="Forza Horizon 5" loading="lazy">
+            </div>
+            <h4 class="game-name">Forza Horizon 4</h4>
+            <div class="game-platforms">
+              <span class="platform-tag">Available on all platforms</span>
+            </div>
+            <button class="download-link" data-link="https://ekeugames.github.io/Download-Forza-Horizon/">Download Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Popup -->
+  <div class="download-popup" id="downloadPopup">
+    <div class="popup-content">
+      <button class="popup-close" id="closePopup">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="popup-icon">
+        <i class="fas fa-cloud-download-alt"></i>
+      </div>
+      <h3 class="popup-title">Preparing Download</h3>
+      <p class="popup-message">Please wait while we prepare the game file for download. The download will start automatically in seconds.</p>
+      
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="countdown">5</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+      
+      <div class="popup-loader"></div>
+      
+      <a href="#" class="popup-download-btn" id="directDownload">
+        <i class="fas fa-download"></i> Start Download Now
+      </a>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Get Exclusive Game Offers</h2>
+        <p>Subscribe to our newsletter to receive special offers, free game alerts, and updates</p>
+        
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>EKEU GAMES</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">Your ultimate destination to download premium games. Safe, fast and reliable.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> All Games</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> New Games</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Most Downloaded</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Featured Games</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> System Requirements</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Report an Issue</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Copyright</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 EKEU GAMES. All rights reserved. Download premium games.</p>
+        <div class="footer-links-bottom">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced particle creation function
+    function createParticles() {
+      const container = document.getElementById('particles');
+      const particleCount = 30;
+      const particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random settings
+        const size = Math.random() * 5 + 2;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const delay = Math.random() * 15;
+        
+        particle.style.cssText = `
+          left: ${posX}%;
+          top: ${posY}%;
+          width: ${size}px;
+          height: ${size}px;
+          animation-delay: ${delay}s;
+        `;
+        
+        container.appendChild(particle);
+        particles.push(particle);
+      }
+      
+      return particles;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles(); // Create particles
+      
+      // Mobile menu functionality
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenuClose = document.querySelector('.mobile-menu-close');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+      });
+      
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+        });
+      });
+      
+      // Download link functionality
+      document.querySelectorAll('.download-link').forEach(link => {
+        link.addEventListener('click', function() {
+          const downloadLink = this.getAttribute('data-link');
+          if (downloadLink) {
+            window.open(downloadLink, '_blank');
+          }
+        });
+      });
+      
+      // Fade-in animation for elements
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      fadeElements.forEach(element => {
+        observer.observe(element);
+      });
+      
+      // Newsletter form submission
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const emailInput = this.querySelector('.newsletter-input');
+          if (emailInput.value) {
+            alert('Thank you for subscribing to our newsletter!');
+            emailInput.value = '';
+          }
+        });
+      }
+      
+      // Download functionality for platform cards
+      const platformCards = document.querySelectorAll('.platform-card');
+      const downloadPopup = document.getElementById('downloadPopup');
+      const closePopup = document.getElementById('closePopup');
+      const directDownload = document.getElementById('directDownload');
+      const countdownEl = document.getElementById('countdown');
+      
+      let downloadLink = '';
+      let countdownValue = 5;
+      let countdownInterval;
+      
+      // Function to start download
+      function startDownload() {
+        clearInterval(countdownInterval);
+        window.open(downloadLink, '_blank');
+        downloadPopup.classList.remove('active');
+      }
+      
+      // Function to start countdown
+      function startCountdown() {
+        countdownValue = 5;
+        countdownEl.textContent = countdownValue;
+        
+        countdownInterval = setInterval(() => {
+          countdownValue--;
+          countdownEl.textContent = countdownValue;
+          
+          if (countdownValue <= 0) {
+            startDownload();
+          }
+        }, 1000);
+      }
+      
+      // Event listeners for platform cards
+      platformCards.forEach(card => {
+        card.addEventListener('click', function() {
+          downloadLink = this.getAttribute('data-link');
+          if (downloadLink) {
+            downloadPopup.classList.add('active');
+            directDownload.href = downloadLink;
+            startCountdown();
+          }
+        });
+      });
+      
+      // Close popup event
+      closePopup.addEventListener('click', () => {
+        downloadPopup.classList.remove('active');
+        clearInterval(countdownInterval);
+      });
+      
+      // Direct download button
+      directDownload.addEventListener('click', function(e) {
+        e.preventDefault();
+        startDownload();
+      });
+    });
+  </script>
+</body>
+</html>
